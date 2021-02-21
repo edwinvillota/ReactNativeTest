@@ -12,6 +12,7 @@ module.exports = {
           reducers: './src/reducers',
           actions: './src/actions',
           type: './src/types',
+          styles: './src/styles',
         },
       },
     ],
