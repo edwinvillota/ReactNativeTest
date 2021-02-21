@@ -1,12 +1,13 @@
 import React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 import SplashScreen from 'react-native-splash-screen';
 
 // Import views
 import {Home, Users, UserDetails} from 'components/views';
+import {StatusBar} from 'react-native';
 
-const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 const App = () => {
   useEffect(() => {
@@ -15,11 +16,12 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Users" component={Users} />
-        <Stack.Screen name="UserDetails" component={UserDetails} />
-      </Stack.Navigator>
+      <StatusBar barStyle="default" />
+      <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Screen name="Home" component={Home} />
+        <Drawer.Screen name="Users" component={Users} />
+        <Drawer.Screen name="UserDetails" component={UserDetails} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 };
