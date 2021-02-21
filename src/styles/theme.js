@@ -10,7 +10,6 @@ const Theme = StyleSheet.create({
     fontFamily: 'arial',
     fontWeight: 'bold',
     fontSize: 45,
-    marginVertical: 60,
     color: Colors.secondary,
   },
 });
