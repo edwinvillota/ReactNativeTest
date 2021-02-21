@@ -3,7 +3,11 @@
     "baseUrl": "./src",
     "jsx": "react",
     "paths": {
-      "components": ["./src/components/*"]
+      "components": ["./src/components/*"],
+      "hooks": ["./src/hooks/*"],
+      "reducers": ["./src/reducers/*"],
+      "actions": ["./src/actions/*"],
+      "types": ["./src/types/*"]
     }
   }
 }
