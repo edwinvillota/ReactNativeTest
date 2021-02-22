@@ -9,10 +9,8 @@ module.exports = {
         alias: {
           components: './src/components',
           hooks: './src/hooks',
-          reducers: './src/reducers',
-          actions: './src/actions',
-          type: './src/types',
           styles: './src/styles',
+          '@redux': './src/redux',
         },
       },
     ],

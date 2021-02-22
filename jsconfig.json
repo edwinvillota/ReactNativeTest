@@ -5,10 +5,8 @@
     "paths": {
       "components": ["./src/components/*"],
       "hooks": ["./src/hooks/*"],
-      "reducers": ["./src/reducers/*"],
-      "actions": ["./src/actions/*"],
-      "types": ["./src/types/*"],
-      "styles": ["./src/styles/*"]
+      "styles": ["./src/styles/*"],
+      "@redux": ["./src/redux/*"]
     }
   }
 }
