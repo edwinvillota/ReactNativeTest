@@ -2,7 +2,12 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import Styles from './styles';
 
-const UserProps = ({attributes}) => {
+// @flow
+type Props = {
+  attributes: Array<{name: string, value: string}>,
+};
+
+const UserProps = ({attributes}: Props) => {
   return (
     <View style={Styles.container}>
       {attributes.map((a) => (

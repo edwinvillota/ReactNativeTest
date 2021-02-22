@@ -2,8 +2,14 @@ import React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import Styles from './styles';
+import {User} from '@types';
 
-const UserItem = ({user}) => {
+// @flow
+type Props = {
+  user: User,
+};
+
+const UserItem = ({user}: Props) => {
   const navigation = useNavigation();
 
   return (

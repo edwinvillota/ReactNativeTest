@@ -6,7 +6,8 @@
       "components": ["./src/components/*"],
       "hooks": ["./src/hooks/*"],
       "styles": ["./src/styles/*"],
-      "@redux": ["./src/redux/*"]
+      "@redux": ["./src/redux/*"],
+      "@types": ["./src/redux/api/types/*"]
     }
   }
 }

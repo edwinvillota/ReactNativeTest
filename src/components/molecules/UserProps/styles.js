@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {Theme, Colors} from 'styles';
+import {Theme} from 'styles';
 
 const UserPropsStyles = StyleSheet.create({
   container: {
