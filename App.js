@@ -1,20 +1,26 @@
 import React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
+import {createStackNavigator} from '@react-navigation/stack';
 import {Provider} from 'react-redux';
-import {createStore, applyMiddleware} from 'redux';
-import createSagaMiddleware from 'redux-saga';
-import AppReducers from 'reducers';
 import SplashScreen from 'react-native-splash-screen';
-
-const sagaMiddleware = createSagaMiddleware();
-const store = createStore(AppReducers, applyMiddleware(sagaMiddleware));
+import store from '@redux/store';
 
 // Import views
 import {Home, Users, UserDetails} from 'components/views';
 import {StatusBar} from 'react-native';
 
 const Drawer = createDrawerNavigator();
+const UsersStack = createStackNavigator();
+
+const UserStackScreen = () => {
+  return (
+    <UsersStack.Navigator>
+      <UsersStack.Screen name="UserList" component={Users} />
+      <UsersStack.Screen name="UserDetails" component={UserDetails} />
+    </UsersStack.Navigator>
+  );
+};
 
 const App = () => {
   useEffect(() => {
@@ -27,8 +33,7 @@ const App = () => {
         <StatusBar barStyle="default" />
         <Drawer.Navigator initialRouteName="Home">
           <Drawer.Screen name="Home" component={Home} />
-          <Drawer.Screen name="Users" component={Users} />
-          <Drawer.Screen name="UserDetails" component={UserDetails} />
+          <Drawer.Screen name="Users" component={UserStackScreen} />
         </Drawer.Navigator>
       </NavigationContainer>
     </Provider>

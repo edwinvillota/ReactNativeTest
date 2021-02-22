@@ -1,8 +1,8 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {UserList} from 'components/organisms';
 
 const Users = () => {
-  return <Text>Users List View</Text>;
+  return <UserList />;
 };
 
 export default Users;
