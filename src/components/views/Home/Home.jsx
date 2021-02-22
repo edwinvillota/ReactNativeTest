@@ -8,7 +8,7 @@ import MapView from 'react-native-maps';
 import {Marker} from 'react-native-maps';
 
 const Home = () => {
-  const {location} = useLocation();
+  const {hasLocationPermission, location} = useLocation();
   const [time, setTime] = useState(new Date().getTime());
   const interval = useRef();
 
@@ -33,8 +33,7 @@ const Home = () => {
         {`Date: ${new Date().toLocaleDateString()}`}
       </Text>
       <Text style={Styles.time}>{`Time: ${time}`}</Text>
-
-      {location ? (
+      {hasLocationPermission && location ? (
         <MapView
           style={Styles.map}
           initialRegion={{
@@ -52,6 +51,9 @@ const Home = () => {
         </MapView>
       ) : (
         <ActivityIndicator size="small" color="#65D9E4" />
+      )}
+      {!hasLocationPermission && (
+        <Text>Heru app needs access to your location</Text>
       )}
     </View>
   );
