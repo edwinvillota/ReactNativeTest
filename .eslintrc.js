@@ -1,9 +1,10 @@
 module.exports = {
   root: true,
-  extends: '@react-native-community',
+  extends: ['@react-native-community', "plugin:flowtype/recommended"],
   parser: "babel-eslint",
   plugins: [
     "react",
-    "react-native"
+    "react-native",
+    "flowtype"
   ]
 };

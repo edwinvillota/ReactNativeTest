@@ -1,6 +1,13 @@
 import {SET_LOADING, GET_USERS} from '../actions/usersActions';
+import {User} from '@types';
 
-const initialState = {
+// @flow
+type UserState = {
+  loading: boolean,
+  users: Array<User>,
+};
+
+const initialState: UserState = {
   loading: false,
   users: [],
 };
