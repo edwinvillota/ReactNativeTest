@@ -16,8 +16,8 @@ const UsersList = ({users: {loading, users}, getUsers}) => {
       {!loading && (
         <FlatList
           data={users}
-          renderItem={({item}) => <UserItem name={item.name} />}
-          keyExtractor={(item) => item.id}
+          renderItem={({item}) => <UserItem user={item} />}
+          keyExtractor={(item) => `${item.id}`}
           ListEmptyComponent={<Text>Nothing to show</Text>}
         />
       )}
