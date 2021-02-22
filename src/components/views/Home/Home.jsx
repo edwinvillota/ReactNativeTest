@@ -3,7 +3,7 @@ import {useFocusEffect} from '@react-navigation/native';
 import {useLocation} from 'hooks';
 import {Theme} from 'styles';
 import Styles from './styles';
-import {View, Text} from 'react-native';
+import {View, Text, ActivityIndicator} from 'react-native';
 import MapView from 'react-native-maps';
 import {Marker} from 'react-native-maps';
 
@@ -34,7 +34,7 @@ const Home = () => {
       </Text>
       <Text style={Styles.time}>{`Time: ${time}`}</Text>
 
-      {location && (
+      {location ? (
         <MapView
           style={Styles.map}
           initialRegion={{
@@ -50,6 +50,8 @@ const Home = () => {
             }}
           />
         </MapView>
+      ) : (
+        <ActivityIndicator size="small" color="#65D9E4" />
       )}
     </View>
   );

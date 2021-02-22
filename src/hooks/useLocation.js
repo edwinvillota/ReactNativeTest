@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import Geolocation from '@react-native-community/geolocation';
+import Geolocation from 'react-native-geolocation-service';
 
 function useLocation() {
   const [location, setLocation] = useState();
